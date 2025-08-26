@@ -1,6 +1,18 @@
+"use client";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function LoginPage() {
+    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        fetch("/api/auth", {
+            method: "POST",
+            body: JSON.stringify({
+                email: e.currentTarget.email.value,
+                password: e.currentTarget.password.value,
+            }),
+        });
+    };
     return (
         <>
             <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900 px-4">
@@ -8,18 +20,13 @@ export default function LoginPage() {
                 <div className="w-full max-w-md rounded-2xl bg-white dark:bg-gray-800 shadow-lg p-8">
                     {/* Logo */}
                     <div className="flex flex-col items-center">
-                        <img
-                            alt="Your Company"
-                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                            className="h-12 w-12"
-                        />
                         <h2 className="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Sign in to your account
                         </h2>
                     </div>
 
                     {/* Form */}
-                    <form action="#" method="POST" className="mt-8 space-y-6">
+                    <form  method="POST" className="mt-8 space-y-6" onSubmit={(e) => handleLogin(e)}>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200">
                                 Email address
@@ -69,6 +76,7 @@ export default function LoginPage() {
                         </Link>
                     </p>
                 </div>
-            </div></>
+            </div>
+        </>
     );
 }
