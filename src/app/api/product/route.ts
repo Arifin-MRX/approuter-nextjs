@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 const data = [
   {
     id: 1,
-    name: "Product 1",
+    title: "Product 1",
+    image:"https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_519,c_limit/a43dd606-dd86-4bf9-aed5-6c70da27aa58/gato-shoes-2gmOIRKa.png",
     description: "Description for Product 1",
     price: 100,
   },
   {
     id: 2,
-    name: "Product 2",
+    title: "Product 2",
+    image:"https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_2.0/h_519,c_limit/21f56016-2e59-4392-b80f-c9440573f798/vaporfly-4-road-racing-shoes-PTwDtp.png",
     description: "Description for Product 2",
     price: 200,
   },
