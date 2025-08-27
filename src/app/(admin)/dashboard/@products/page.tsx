@@ -20,7 +20,7 @@ export default function AdminProductPage() {
 
     }
     return (
-        <div>
+        <div className="w-3/6 h-96 bg-gray-300 rounded-[12px] flex flex-col items-center justify-center gap-4 ">
             <h1>
                 {status}
             </h1>
